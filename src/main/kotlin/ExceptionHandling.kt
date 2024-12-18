@@ -41,3 +41,22 @@ fun getUserInput() : Int{
     }
 
 }
+
+// Custom exception for insufficient funds
+class InsufficientFundsException(accountNumber: String, requiredNumber: Double, availableBalance: Double):
+    Exception("Account ${accountNumber} does not have sufficient fund. Required: ${requiredNumber} , Available balance: ${availableBalance}" )
+
+// Custom exception for invalid account number
+class InvalidAccountNumberException(accountNumber: String) :
+    RuntimeException("Invalid account number: $accountNumber")
+
+// Custom exception for transaction limit exceeded
+class TransactionLimitExceededException(limit: Double) :
+    RuntimeException("Transaction limit exceeded. Maximum allowed: $limit")
+
+/**
+ * You can handle the following exceptions:
+ * 1. File I/O Exception
+ * 2. Kotlin Network Operations and Exception handling.
+ * 3. Kotlin Database Interaction Exception.
+ */

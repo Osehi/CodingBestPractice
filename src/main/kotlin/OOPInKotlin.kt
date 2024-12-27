@@ -4,6 +4,12 @@ fun main() {
     val person1 = Person("John", 25)
     println("Name: ${person1.name}, Age:${person1.age}")
     SingletonObject.doSomething()
+
+        // an instance of a citizen
+    val firstCitizenName = Citizen().name
+    val firstObjectCitizen = Citizen().introduce()
+    println("Here is the name of the Citizen: ${firstCitizenName}")
+    println("Here is the introduction: ${Citizen().introduce()}")
 }
 
 class Person(
@@ -27,3 +33,49 @@ object SingletonObject {
         println("Singlet object is doing something")
     }
 }
+
+/**
+ * Inheritance = is the transfer of properties and functions
+ */
+
+open class Animal {
+
+}
+
+class Dog : Animal() {
+
+}
+
+class Citizen {
+
+    var name: String = "John"
+        private set
+
+
+    fun introduce() {
+        println("Hello, my name is $name")
+    }
+
+}
+
+/**
+ * Polymorphysm -  as the name implies many forms.
+ * a method or function can be used to perform many actions - different actions. Through overriding and overloading.
+ */
+
+open class Shape {
+    open fun draw() {
+        println("Draw a shape")
+    }
+}
+
+class Circle: Shape() {
+    override fun draw() {
+        println("Draw a Circle")
+    }
+}
+
+/**
+ * Abstraction - it tis uded to hide complexities and expose only neccessary functionalities.
+ * Interface abd abstract classes are used to implement this feature
+ */

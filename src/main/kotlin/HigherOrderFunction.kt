@@ -27,12 +27,7 @@ fun main() {
 
     printFormattedTasks(tasks){  task -> "${task.id}: ${task.description} [Priority: ${task.priority}]"}
 
-
-
-
-
-
-
+    
 
         // testing a basic higher-order function
     higherOrderFunction { a, b -> a + b}
@@ -40,6 +35,15 @@ fun main() {
     // another example of higherOrder function
     val output = operateNumbers(5, 3, ::add)
     println(" This is the output: ${output}")
+
+    // see the even numbers
+    println("See all the even numbers: ${evenNumbers}")
+    // see the odd numbers
+    println("See all the odd numbers: ${oddNumbers}")
+    // filtered names
+    println("original names: ${names}")
+    println("Filtered names (starting with letter) 'O': ${filteredName}")
+
 }
 
 fun filterTasks(tasks: List<Task>, predicate: (Task) -> Boolean) : List<Task>{
@@ -98,3 +102,14 @@ fun add(a: Int, b:Int): Int {
 fun multiply(a: Int, b:Int) : Int {
     return  a * b
 }
+/**
+ * Lambda
+ */
+// filtering a list
+val numbers = listOf(1,2,3,4,5,6)
+val evenNumbers = numbers.filter { it % 2 == 0 }
+val oddNumbers = numbers.filter { it % 2  != 0 }
+
+// using a list of names example
+val names = listOf("Osehiase", "Ehizokhale", "Oseghale", "Oseremen", "Emoiyua")
+val filteredName = names.filter { name -> name.startsWith("O") }
